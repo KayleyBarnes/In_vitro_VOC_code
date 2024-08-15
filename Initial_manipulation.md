@@ -20,9 +20,23 @@ The same was done for replicate 2 data
 
 Then python merge of the two replicate files 
 ```
+import pandas as pd
+
+file1 = pd.read_csv("pivoted_VOC_data.csv")
+
+print(file1.head())
+
+file2 = pd.read_csv("pivoted_VOC_data_Final_2.csv")
+
+print(file1.head())
+
+data = pd.merge(left=file1, right=file2, on=['Compound', 'ID'], how='inner')
+
+print(data.head())
+
+data.to_csv("Merged_data_file.csv", index=False)
 
 ```
 
-See Pivot_data.py for next step
-
+Open 'Merged_data_file.csv' in excel and add Replicate1 presence column and Replicate2 presence column, additional column named 'Final_presence'
 
