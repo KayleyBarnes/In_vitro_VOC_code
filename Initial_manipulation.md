@@ -18,6 +18,11 @@ cat modified*.csv > replicate1.csv
 ```
 The same was done for replicate 2 data 
 
+Then python merge of the two replicate files 
+```
+
+```
+
 See Pivot_data.py for next step
 
 
