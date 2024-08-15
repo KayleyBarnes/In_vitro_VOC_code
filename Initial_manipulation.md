@@ -40,3 +40,13 @@ data.to_csv("Merged_data_file.csv", index=False)
 
 Open 'Merged_data_file.csv' in excel and add Replicate1 presence column and Replicate2 presence column, additional column named 'Final_presence'
 
+```
+import pandas as pd
+
+presence2 = pd.read_csv("Merged_data_file.csv ")
+
+presence2_pivot = pd.pivot_table(presence2, values="Final_presence", index="ID", columns="Compound")
+
+presence2_pivot.to_csv("presence2_pivot.csv", index=True)
+
+```
